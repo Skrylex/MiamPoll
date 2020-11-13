@@ -20,3 +20,8 @@ ActiveStorage.start()
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+
+import "bootstrap"
+import 'bootstrap/scss/bootstrap'
+import 'bootstrap/scss/bootstrap-grid'
+import 'bootstrap/scss/bootstrap-reboot'
