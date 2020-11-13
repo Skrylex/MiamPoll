@@ -1,0 +1,38 @@
+{
+  // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+  // Pointez pour afficher la description des attributs existants.
+  // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Launch Server",
+      "configurations": ["Rails", "Google Chrome"]
+    }
+  ],
+  "configurations": [    
+    {
+      "name": "Rails",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "server"
+      ]
+    },   
+    {
+      "name": "Google Chrome",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "http://127.0.0.1:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Microsoft Edge",
+      "request": "launch",
+      "type": "pwa-msedge",
+      "url": "http://127.0.0.1:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+  ]
+}
