@@ -15,5 +15,12 @@ module MiamPoll
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Timezone
+    config.time_zone = 'Europe/Paris'
+    config.active_record.default_timezone = :local
+
+    # Exception
+    config.exceptions_app = self.routes    
   end
 end
