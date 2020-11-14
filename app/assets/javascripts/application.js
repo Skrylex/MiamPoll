@@ -26,6 +26,4 @@ import 'bootstrap/scss/bootstrap'
 import 'bootstrap/scss/bootstrap-grid'
 import 'bootstrap/scss/bootstrap-reboot'
 
-import "@fortawesome/fontawesome-free/js/all";
-
 import '../stylesheets/application'
