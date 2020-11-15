@@ -1,3 +1,10 @@
-<nav id="mp-navigation">
-test
+<nav id="navigation">
+  <%= link_to root_url, id:"navigation-brand" do %>
+    <%= image_tag "arkasy.png", alt:"brand" %>
+  <% end %>
+
+  <div id="navigation-panel">
+    <%= link_to "<i class='fas fa-sign-out-alt'></i>".html_safe, destroy_account_session_path, class: "mp-button mp-button-logout", data: { turbolinks: "false", tippy_content: "Déconnexion", tippy_placement: 'left' }, :method => :delete %>
+
+  </div>
 </nav>
