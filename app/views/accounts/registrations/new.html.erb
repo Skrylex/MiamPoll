@@ -5,6 +5,11 @@
     <%= render "accounts/shared/error_messages", resource: resource %>
 
     <div class="field">
+      <span class="field-prepend"><i class="fas fa-user"></i></span>
+      <%= f.text_field :pseudo, autofocus: true, placeholder: "Pseudo" %>
+    </div>
+
+    <div class="field">
       <span class="field-prepend"><i class="fas fa-at"></i></span>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     </div>

@@ -5,6 +5,7 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.1]
     create_table :accounts do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
+      t.string :pseudo,             null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -37,6 +38,7 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.1]
     end
 
     add_index :accounts, :email,                unique: true
+    add_index :accounts, :pseudo,               unique: true
     add_index :accounts, :reset_password_token, unique: true
     # add_index :accounts, :confirmation_token,   unique: true
     # add_index :accounts, :unlock_token,         unique: true
