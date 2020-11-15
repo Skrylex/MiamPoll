@@ -1,0 +1,15 @@
+section.mp-account-session-form {
+  border-radius: var(--border-radius-default);
+  background: var(--color-background-base);
+  padding: var(--padding-large);
+  min-width: 280px;
+  max-width: 460px;
+  width: 100%;
+
+  & h2 {
+    margin: 0;
+    text-align: center;
+    font-size: var(--font-size-large-3);
+    text-transform: uppercase;
+  }
+}

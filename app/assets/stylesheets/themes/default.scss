@@ -1,0 +1,42 @@
+@import "fonts";
+
+:root {    
+  --color-primary: #ea8314;
+  --color-secondary: #c86a00;
+
+  --color-text-default: #efeff1;
+  --color-text-alt: #adadb8;
+
+  --color-background-base: #18181B;
+  --color-background-default: #0e0e10;
+  --color-background-alt: #1f1f23;
+  --color-background-alt-2: #26262c;
+
+  --color-border-default: #efeff1;
+
+  --border-radius-default: 4px;
+
+  --padding-default: 10px;
+  --padding-large: 20px;
+
+  --font-family-default: "Inter", "Arial", sans-serif;
+  
+  --font-size-small-2: 0.8rem;
+  --font-size-small-1: 0.9rem;
+  --font-size-default: 12px;
+  --font-size-base: 1rem;
+  --font-size-large-1: 1.1rem;
+  --font-size-large-2: 1.2rem;
+  --font-size-large-3: 1.3rem;
+  --font-size-large-4: 1.4rem;
+  --font-size-large-5: 1.5rem;
+  --font-size-large-6: 1.6rem;
+  --font-size-large-7: 1.7rem;
+  --font-size-large-8: 1.8rem;
+  --font-size-large-9: 1.9rem;
+  --font-size-large-10: 2rem;
+  --font-size-large-15: 2.5rem;
+  --font-size-large-20: 3rem;
+  --font-size-large-25: 3.5rem;
+  --font-size-large-30: 4rem;
+}
