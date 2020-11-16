@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
 
   devise_for :accounts, controllers: { sessions: "accounts/sessions", registrations: "accounts/registrations", passwords: "accounts/passwords" }
-
+  
 end

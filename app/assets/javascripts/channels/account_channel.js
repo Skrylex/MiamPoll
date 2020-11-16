@@ -3,6 +3,7 @@ import consumer from "./consumer"
 consumer.subscriptions.create("AccountChannel", {
   connected() {
     console.log('channel connected')
+    $("html").attr('data-friends-loaded', '')
   },
 
   disconnected() {

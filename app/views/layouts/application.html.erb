@@ -13,8 +13,8 @@
     <%= stylesheet_pack_tag 'application', media: 'all', data: { turbolinks_track: 'reload' } %>
   </head>
 
-  <body>
-    <%= render "layouts/navbar" if account_signed_in? %>
+  <body data-controller="application">
+    <%= render "layouts/navbar" if account_signed_in? %>    
     <main><%= yield %></main>
   </body>
 </html>

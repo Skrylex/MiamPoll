@@ -9,4 +9,5 @@ class Account < ApplicationRecord
   def remember_me
     (super == nil) ? true : super
   end  
+
 end
