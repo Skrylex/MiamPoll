@@ -5,8 +5,10 @@
     <%= render "accounts/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-at"></i></span>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-at"></i></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      </div>
     </div>
 
     <div class="actions">

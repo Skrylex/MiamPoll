@@ -5,23 +5,32 @@
     <%= render "accounts/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-user"></i></span>
-      <%= f.text_field :pseudo, autofocus: true, placeholder: "Pseudo" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-user"></i></div>
+        <%= f.text_field :pseudo, autofocus: true, placeholder: "Pseudo" %>
+      </div>
     </div>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-at"></i></span>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-at"></i></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      </div>
     </div>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-key"></i></span>
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-key"></i></div>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe" %>
+      </div>
+      <%= content_tag :span, "#{@minimum_password_length} caractères minimum", class: "field-info" if @minimum_password_length %>
     </div>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-key"></i></span>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Répétez mot de passe" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-key"></i></div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Répétez mot de passe" %>
+      </div>
     </div>
 
     <div class="actions">

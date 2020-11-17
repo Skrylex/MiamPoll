@@ -5,13 +5,17 @@
     <%= render "accounts/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-user"></i></span>
-      <%= f.text_field :pseudo, autofocus: true, placeholder: "Pseudo" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-user"></i></div>
+        <%= f.text_field :pseudo, autofocus: true, placeholder: "Pseudo" %>
+      </div>
     </div>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-at"></i></span>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-at"></i></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,22 +23,27 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
-      <% end %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-key"></i></div>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe" %>
+      </div>
+      <%= content_tag :span, "#{@minimum_password_length} caractères minimum", class: "field-info" if @minimum_password_length %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-key"></i></div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Retapez le nouveau mot de passe" %>
+      </div>
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-lock"></i></div>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel" %>
+      </div>
+      
+      <%= content_tag :span, "Mot de passe actuel nécesssaire pour le modifier", class: "field-info" %>
     </div>
 
     <div class="actions">
@@ -42,9 +51,7 @@
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "mp-button-large mp-button-destroy", method: :delete %>
 
   <%= link_to "Back", :back %>
 </section>

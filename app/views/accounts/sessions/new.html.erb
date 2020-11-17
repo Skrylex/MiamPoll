@@ -3,13 +3,17 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-at"></i></span>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-at"></i></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+      </div>
     </div>
 
     <div class="field">
-      <span class="field-prepend"><i class="fas fa-key"></i></span>
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Mot de passe", class: "form-control" %>
+      <div class="mp-flex mp-flex-direction-row">
+        <div class="field-prepend"><i class="fas fa-key"></i></div>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Mot de passe", class: "form-control" %>
+      </div>
     </div>
 
     <% if devise_mapping.rememberable? %>
