@@ -1,0 +1,20 @@
+<%= content_tag :ul, class: "gmap-api-items" do %>
+  <% results.each do |result| %>    
+    <%= content_tag :li, id: result['place_id'] do %>
+      <%= button_tag type: "button", data: { action: "click->polls#new" } do %>
+        <figure>
+          <% begin %>
+            <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=#{ENV['GOOGLE_API_SERVER_KEY']}&photoreference=#{result["photos"][0]["photo_reference"]}&maxheight=120" %>
+          <% rescue; end %>
+        </figure>
+        <div class="mp-flex mp-flex-direction-column mp-flex-justify-center">
+          <span class="gmap-item-name"><%= result['name'] %></span>
+          <div class="mp-flex mp-flex-direction-row">
+            <span class="gmap-item-rating"><i class="fas fa-star"></i><%= result['rating'] %></span>
+            <span class="gmap-item-address"><%= result['formatted_address'] %></span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end if results.length > 0 %>

@@ -28,6 +28,7 @@ import '@fortawesome/fontawesome-free/scss/solid.scss'
 import '@fortawesome/fontawesome-free/scss/brands.scss'
 
 import 'simplebar'
+import 'simplebar/dist/simplebar.min.css'
 
 // Import custom JS
 import './tooltip'

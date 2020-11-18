@@ -12,7 +12,6 @@ html {
   font-size: var(--font-size-default);
   background: var(--color-background-default);
   color: var(--color-text-default);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -25,7 +24,6 @@ body {
   flex-direction: column;
   min-width: 360px;
   flex-wrap: nowrap;
-  overflow: hidden;
   position: relative;
   justify-content: flex-start;
 }
@@ -262,3 +260,5 @@ a {
 
 .mp-flex { display: flex; }
 .mp-flex-direction-row { flex-direction: row; }
+.mp-flex-direction-column { flex-direction: column; }
+.mp-flex-justify-center { justify-content: center; }

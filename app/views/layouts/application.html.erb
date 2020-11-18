@@ -11,10 +11,9 @@
     
     <%= javascript_pack_tag 'application', data: { turbolinks_track: 'reload' }, async: true %>
     <%= stylesheet_pack_tag 'application', media: 'all', data: { turbolinks_track: 'reload' } %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_SERVER_KEY']}" %>
   </head>
 
-  <body data-controller="application">
+  <body data-controller="application" >
     <%= render "layouts/navbar" if account_signed_in? %>    
     <main><%= yield %></main>
   </body>

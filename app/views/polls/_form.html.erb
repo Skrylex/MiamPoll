@@ -10,10 +10,21 @@
     <%= f.text_area :description, rows: 6, class: "mp-textarea-autosize" %>
   </div>
 
+  
   <div class="field">
-    <%= f.label :search_places %>
-    <%= text_field_tag :search_places, "", data: { action: "change->polls#searchPlaces", target: "polls.field" } %>
+    <%= f.label :choices %>
+    <%= f.hidden_field :choices, data: { target: "polls.choices", action: "change->polls#show" } %>
+    <div id="poll-choices" data-target="polls.content">Aucun choix</div>
   </div>
+
+  <div class="field">
+    <div class="mp-flex mp-flex-direction-column">
+      <%= text_field_tag :search_places, "", placeholder: "Rechercher un lieu", data: { reflex: "change->PollsReflex#searchPlaces" } %>
+    </div>
+    <div id="gmap-api" data-simplebar><div id="gmap-api-container"></div></div>
+    
+  </div>
+  
 
   <div class="actions">
     <%= f.submit "Enregistrer" %>
