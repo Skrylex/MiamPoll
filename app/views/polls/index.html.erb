@@ -1,0 +1,23 @@
+<h1>Mes sondages</h1>
+
+<%= link_to "<i class='fas fa-plus'></i>".html_safe, new_poll_path, class: "mp-button", data: { tippy_content: "Créer un sondage" } %>
+
+<%= content_tag :section, class: "mp-cards" do %>
+  <h2>Mes sondages en cours</h2>
+
+  <ul>
+    <% @polls[:opened].each do |poll| %>
+      <li><%= render "preview", poll: poll %></li>
+    <% end %>
+  </ul>
+<% end unless @polls[:opened].empty? %>
+
+<%= content_tag :section, class: "mp-cards" do %>
+  <h2>Mes sondages terminés</h2>
+
+  <ul>
+    <% @polls[:closed].each do |poll| %>
+      <li><%= render "preview", poll: poll %></li>
+    <% end %>
+  </ul>
+<% end unless @polls[:closed].empty? %>

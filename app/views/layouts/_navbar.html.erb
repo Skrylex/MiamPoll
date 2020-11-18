@@ -4,7 +4,7 @@
   <% end %>
 
   <div id="navigation-panel">
-    <%= link_to "<i class='fas fa-poll'></i>".html_safe, "#", class: "mp-button", data: { tippy_content: "Nouveau sondage", tippy_placement: 'bottom' } %>
+    <%= link_to "<i class='fas fa-poll'></i>".html_safe, polls_path, class: "mp-button", data: { tippy_content: "Sondages", tippy_placement: 'bottom' } %>
     <%= link_to "<i class='fas fa-cog'></i>".html_safe, edit_account_registration_path, class: "mp-button", data: { tippy_content: "Paramètres", tippy_placement: 'bottom' } %>
     <%= link_to "<i class='fas fa-sign-out-alt'></i>".html_safe, destroy_account_session_path, class: "mp-button mp-button-logout", data: { turbolinks: "false", tippy_content: "Déconnexion", tippy_placement: 'bottom' }, :method => :delete %>
   </div>

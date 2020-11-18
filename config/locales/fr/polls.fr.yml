@@ -1,0 +1,6 @@
+fr:
+  activerecord:
+    attributes:
+      poll:
+        title: "Question"
+        description: "Description"

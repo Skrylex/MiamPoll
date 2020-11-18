@@ -1,0 +1,22 @@
+<%= form_for(poll, html: { class: "mp-form-polls" }, data: { controller: "polls" }) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <span class="field-info">Champs requis</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 6, class: "mp-textarea-autosize" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :search_places %>
+    <%= text_field_tag :search_places, "", data: { action: "change->polls#searchPlaces", target: "polls.field" } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enregistrer" %>
+  </div>
+
+<% end %>

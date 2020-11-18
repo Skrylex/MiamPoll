@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_102300) do
+ActiveRecord::Schema.define(version: 2020_11_18_085408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,15 @@ ActiveRecord::Schema.define(version: 2020_11_16_102300) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
-  create_table "friends", force: :cascade do |t|
-    t.bigint "created_by_account_id"
+  create_table "polls", force: :cascade do |t|
+    t.string "title", default: ""
+    t.text "description", default: ""
     t.bigint "account_id"
-    t.datetime "validated_at"
+    t.datetime "closed_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["account_id"], name: "index_friends_on_account_id"
-    t.index ["created_by_account_id"], name: "index_friends_on_created_by_account_id"
+    t.text "choices"
+    t.index ["account_id"], name: "index_polls_on_account_id"
   end
 
-  add_foreign_key "friends", "accounts"
-  add_foreign_key "friends", "accounts", column: "created_by_account_id"
 end

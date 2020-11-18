@@ -24,6 +24,8 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
+gem 'geocoder', '~> 1.6', '>= 1.6.4'
+gem 'figaro', '~> 1.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

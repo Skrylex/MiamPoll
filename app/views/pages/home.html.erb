@@ -1,0 +1,7 @@
+<%= content_tag :ul do %>
+  <li>
+    <% @polls.each do |poll| %>
+      <%= render "polls/preview", poll: poll %>
+    <% end %>
+  </li>
+<% end unless @polls.empty? %>

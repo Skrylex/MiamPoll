@@ -34,3 +34,11 @@ import './tooltip'
 
 // Import SCSS
 import '../stylesheets/application'
+
+window.addEventListener('load', () => {
+  autosize(document.querySelectorAll('textarea.mp-textarea-autosize'))
+})
+
+document.addEventListener('turbolinks:load', () => {
+  autosize(document.querySelectorAll('textarea.mp-textarea-autosize'))
+})
