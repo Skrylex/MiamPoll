@@ -3,6 +3,8 @@
     <%= image_tag "arkasy.png", alt:"brand" %>
   <% end %>
 
+  <div id="navigation-pseudo"><%= current_account.pseudo %></div>
+
   <div id="navigation-panel">
     <%= link_to "<i class='fas fa-poll'></i>".html_safe, polls_path, class: "mp-button", data: { tippy_content: "Sondages", tippy_placement: 'bottom' } %>
     <%= link_to "<i class='fas fa-cog'></i>".html_safe, edit_account_registration_path, class: "mp-button", data: { tippy_content: "Paramètres", tippy_placement: 'bottom' } %>

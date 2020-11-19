@@ -1,0 +1,14 @@
+<div class="mp-vote">
+  <figure>
+    <% begin %>
+      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=#{ENV['GOOGLE_API_SERVER_KEY']}&photoreference=#{vote["photos"][0]["photo_reference"]}&maxheight=120" %>
+    <% rescue; end %>
+  </figure>
+  <div class="mp-flex mp-flex-direction-column mp-flex-justify-center mp-flex-1">
+    <span class="gmap-item-name"><%= vote['name'] %></span>
+    <div class="mp-flex mp-flex-direction-row">
+      <span class="gmap-item-rating"><i class="fas fa-star"></i><%= vote['rating'] %></span>
+      <span class="gmap-item-address"><%= vote['formatted_address'] %></span>
+    </div>
+  </div>
+</div>

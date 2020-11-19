@@ -1,0 +1,5 @@
+<h2><%= @poll.title %></h2>
+<p><%= @poll.description %></p>
+
+
+<%= render "#{@poll.open? ? "open" : "close"}", poll: @poll, vote: @my_vote %>

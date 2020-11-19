@@ -16,6 +16,8 @@ module MiamPoll
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.middleware.use Rack::Deflater
+    
     # Timezone
     config.time_zone = 'Europe/Paris'
     config.active_record.default_timezone = :local

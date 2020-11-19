@@ -18,11 +18,11 @@
   </div>
 
   <div class="field">
-    <div class="mp-flex mp-flex-direction-column">
-      <%= text_field_tag :search_places, "", placeholder: "Rechercher un lieu", data: { reflex: "change->PollsReflex#searchPlaces" } %>
+    <div class="mp-flex mp-flex-direction-row">
+      <%= text_field_tag :search_places, "", placeholder: "Rechercher un lieu" %>
+      <%= button_tag "<i class='fas fa-search'></i>".html_safe, type: "button", class: "mp-button mp-button-search", data: { reflex: "click->PollsReflex#searchPlaces" } %>
     </div>
     <div id="gmap-api" data-simplebar><div id="gmap-api-container"></div></div>
-    
   </div>
   
 

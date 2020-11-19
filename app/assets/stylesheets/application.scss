@@ -2,6 +2,7 @@
 @import "./account.scss";
 @import "./tooltips.scss";
 @import "./polls.scss";
+@import "./votes.scss";
 
 html {
   position: relative;
@@ -68,6 +69,14 @@ nav#navigation {
     & a, & button {
       margin-right: 10px;
     }
+  }
+
+  & #navigation-pseudo {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-large-3);
+    margin-left: 10px;
+    font-weight: 800;
   }
 }
 
@@ -258,7 +267,17 @@ a {
   }
 }
 
+.mp-button-search {
+  margin-left: 2px;
+  background: var(--color-primary);
+
+  &:hover {
+    background: var(--color-secondary);
+  }
+}
+
 .mp-flex { display: flex; }
 .mp-flex-direction-row { flex-direction: row; }
 .mp-flex-direction-column { flex-direction: column; }
 .mp-flex-justify-center { justify-content: center; }
+.mp-flex-1 { flex: 1; }

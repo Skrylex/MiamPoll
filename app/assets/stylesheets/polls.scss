@@ -18,6 +18,7 @@ form.mp-form-polls {
 
     & li {
       margin: 5px 0;
+      display: flex;
 
       & button {
         display: flex;
@@ -30,6 +31,7 @@ form.mp-form-polls {
         outline: none;
         font-family: var(--font-family-default);
         align-items: center;
+        flex: 1;
 
         &:hover {
           border-color: var(--color-primary);

@@ -1,11 +1,12 @@
 import { Controller } from "stimulus"
 
+import Rails from "@rails/ujs";
+
 export default class extends Controller {
   static targets = [ "searchItem", "choices", "content" ]
 
   new(event) {
     const id = $(event.target).parents('li')[0].id
-    console.log("PLACE ID : ", id)
 
     if (this.choicesTarget.value.length <= 0) {
       var choices = id
@@ -16,10 +17,8 @@ export default class extends Controller {
       }
       choices = choices.join(',')
     }
-    console.log('BASE CHOICES : ', choices)
 
     this.choicesTarget.value = choices
-    console.log('END CHOICES : ', this.choicesTarget.value)
   }
 
   show() {    

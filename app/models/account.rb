@@ -4,6 +4,7 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :validatable, :trackable
 
   has_many :polls, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   validates :pseudo, presence: true, length: {minimum: 3, maximum: 15}, on: [:create, :update]
   validates_uniqueness_of :pseudo
@@ -13,11 +14,11 @@ class Account < ApplicationRecord
   end  
 
   def open_polls
-    self.polls.where('closed_at > ?', Time.now)
+    self.polls.where('closed_at > ? OR closed_at IS ?', Time.now, nil)
   end
 
   def close_polls
-    self.polls.where('closed_at <= ? OR closed_at IS ?', Time.now, nil)
+    self.polls.where('closed_at <= ?', Time.now)
   end  
 
 end

@@ -6,5 +6,9 @@ Rails.application.routes.draw do
 
   devise_for :accounts, controllers: { sessions: "accounts/sessions", registrations: "accounts/registrations", passwords: "accounts/passwords" }
   
-  resources :polls, only: %i[index new create]
+  resources :polls, only: %i[index show new create]
+  resources :votes, only: %i[create update destroy]
+
+  get "/polls/:id/close", to: "polls#close", as: :close_poll
+  get "/polls/:id/open", to: "polls#open", as: :open_poll
 end

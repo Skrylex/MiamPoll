@@ -1,0 +1,16 @@
+<%= form_for(vote, data: { controller: "polls"}) do |f| %>
+  <%= f.hidden_field :poll_id, value: poll.id %>
+  <% poll.choices.split(',').each do |choice| %>
+    <div class="mp-vote-radio">
+      <%= f.radio_button :gmap_id, choice, checked: (vote.gmap_id == choice) %>
+      <%= f.label :"gmap_id_#{choice.downcase }", data: { target: "polls.choices", place_id: choice } do %>
+        <%= render "votes/show", vote: get_vote(choice) %>
+      <% end %>   
+      <div class="mp-vote-score"><div class="mp-vote-score-progress" style="width:<%= poll.percent_votes(choice) %>%"></div><span><%= poll.percent_votes(choice) %>%</span></div>   
+    </div>
+  <% end %>
+
+  <%= f.submit class: "mp-button-large" %>
+<% end %>
+
+<%= link_to "<i class='fas fa-times'></i>".html_safe, close_poll_path(poll), class: "mp-button mp-button-destroy", data: { tippy_content: "Fermer le sondage"} if poll.owner?(current_account) %>

@@ -1,0 +1,10 @@
+<% poll.choices.split(',').each do |choice| %>
+  <div class="mp-vote-radio">
+    <%= render "votes/show", vote: get_vote(choice) %>
+    <div class="mp-vote-score"><div class="mp-vote-score-progress" style="width:<%= poll.percent_votes(choice) %>%"></div><span><%= poll.percent_votes(choice) %>%</span></div>   
+  </div>
+<% end %>
+
+
+
+<%= link_to "<i class='fas fa-play'></i>".html_safe, open_poll_path(poll), class: "mp-button", data: { tippy_content: "Ouvrir le sondage"}  if poll.owner?(current_account) %>
