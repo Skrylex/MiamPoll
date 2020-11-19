@@ -1,1 +1,6 @@
-<%= link_to poll.title, poll_path(poll) %>
+<%= link_to poll_path(poll) do %>
+  <span class="mp-poll-title"><%= poll.title %></span>
+  <span class="mp-poll-description"><%= simple_format(poll.description) %></span>
+  <span class="mp-poll-infos"><i class="fas fa-info-circle"></i>Créé par <%= poll.account.pseudo %> le <%= poll.created_at %></span>
+  <span class="mp-poll-votes"><i class="fas fa-vote-yea"></i>Nombre de vote <%= poll.votes.count %><%= " - [VOTE TERMINÉ] " unless poll.open? %></span>
+<% end %>

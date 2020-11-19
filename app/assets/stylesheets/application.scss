@@ -49,6 +49,10 @@ main {
   }
 }
 
+h2 {
+  text-align: center;
+}
+
 nav#navigation {
   height: 50px;
   display: flex;
@@ -282,6 +286,62 @@ a {
   &:hover {
     background: var(--color-secondary);
   }
+}
+
+.mp-cards {
+ & ul {
+   padding: 0;
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+
+   & li {
+     flex: 1;
+     position: relative;
+     background: var(--color-background-base);
+     border-radius: var(--border-radius-default);
+     padding: 8px;
+     margin: 5px;
+
+    & a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & span {
+        display: block;
+      }
+
+      & span.mp-poll-title {
+        text-transform: uppercase;
+        font-size: var(--font-size-default);
+        color: var(--color-text-default);
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      & span.mp-poll-description {
+        font-size: var(--font-size-default);
+        color: var(--color-text-default);
+        
+        & p {
+          margin: 0 0 10px 0;
+        }
+      }
+
+      & span.mp-poll-infos, & .mp-poll-votes {
+        color: var(--color-text-alt);
+        font-size: var(--font-size-small-1);
+
+        & i {
+          margin: 0 5px;
+        }
+      }
+
+    }
+   }
+ }
 }
 
 .mp-flex { display: flex; }

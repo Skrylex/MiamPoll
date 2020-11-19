@@ -15,6 +15,7 @@
     <%= f.label :choices %>
     <%= f.hidden_field :choices, data: { target: "polls.choices", action: "change->polls#show" } %>
     <div id="poll-choices" data-target="polls.content"></div>
+    <span class="field-info">Champs requis (min 2, max 5)</span>
   </div>
 
   <div class="field">
