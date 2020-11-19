@@ -8,7 +8,7 @@
 </section>
 
 <section class="mp-cards">
-  <h2>Sondages en terminés (avec votre participation)</h2>
+  <h2>Sondages terminés (avec votre participation)</h2>
   <%= content_tag :ul do %>
     <% @polls_closed.each do |poll| %>
       <li><%= render "polls/preview", poll: poll %></li>
