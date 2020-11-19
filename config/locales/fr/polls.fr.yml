@@ -4,3 +4,4 @@ fr:
       poll:
         title: "Question"
         description: "Description"
+        choices: "Choix"

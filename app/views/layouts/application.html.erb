@@ -15,6 +15,6 @@
 
   <body data-controller="application" >
     <%= render "layouts/navbar" if account_signed_in? %>    
-    <main><%= yield %></main>
+    <main><div class="mp-row"><%= yield %></div></main>
   </body>
 </html>

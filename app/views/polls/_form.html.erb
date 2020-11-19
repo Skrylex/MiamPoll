@@ -14,7 +14,7 @@
   <div class="field">
     <%= f.label :choices %>
     <%= f.hidden_field :choices, data: { target: "polls.choices", action: "change->polls#show" } %>
-    <div id="poll-choices" data-target="polls.content">Aucun choix</div>
+    <div id="poll-choices" data-target="polls.content"></div>
   </div>
 
   <div class="field">

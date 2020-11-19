@@ -7,7 +7,7 @@
             <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=#{ENV['GOOGLE_API_SERVER_KEY']}&photoreference=#{result["photos"][0]["photo_reference"]}&maxheight=120" %>
           <% rescue; end %>
         </figure>
-        <div class="mp-flex mp-flex-direction-column mp-flex-justify-center">
+        <div class="mp-flex mp-flex-direction-column mp-flex-justify-center mp-flex-1">
           <span class="gmap-item-name"><%= result['name'] %></span>
           <div class="mp-flex mp-flex-direction-row">
             <span class="gmap-item-rating"><i class="fas fa-star"></i><%= result['rating'] %></span>

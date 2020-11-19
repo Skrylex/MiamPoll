@@ -1,17 +1,13 @@
 <h2>Sondages en cours</h2>
 <%= content_tag :ul do %>
-  <li>
-    <% @polls.each do |poll| %>
-      <%= render "polls/preview", poll: poll %>
-    <% end %>
-  </li>
+  <% @polls.each do |poll| %>
+    <li><%= render "polls/preview", poll: poll %></li>
+  <% end %>
 <% end unless @polls.empty? %>
 
 <h2>Sondages en terminés (avec votre participation)</h2>
 <%= content_tag :ul do %>
-  <li>
-    <% @polls_closed.each do |poll| %>
-      <%= render "polls/preview", poll: poll %>
-    <% end %>
-  </li>
+  <% @polls_closed.each do |poll| %>
+    <li><%= render "polls/preview", poll: poll %></li>
+  <% end %>  
 <% end unless @polls_closed.empty? %>

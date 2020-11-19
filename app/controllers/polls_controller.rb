@@ -25,6 +25,8 @@ class PollsController < ApplicationController
     @poll.account_id = current_account.id
 
     return redirect_to polls_path if @poll.save
+
+    @poll.choices = ""
     render :new
   end
 
